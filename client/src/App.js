@@ -16,7 +16,7 @@ function App() {
         <Route exact path="/" >
           <Books/>
         </Route>
-        <Route exact path="/books">
+        <Route exact path="/saved">
           <Books/>
         <Route/>
         <Route exact path="/search"/>

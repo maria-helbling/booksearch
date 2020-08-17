@@ -28,7 +28,9 @@ function Books() {
       .catch(err => console.log(err));
   };
 
-  function deleteBook(id) {
+  function deleteBook(e) {
+    e.preventDefault();
+    let id=e.target.getAttribute('data-id')
     API.deleteBook(id)
       .then(res => loadBooks())
       .catch(err => console.log(err));
@@ -72,14 +74,9 @@ function Books() {
               <div className="row">
 
               {books.map(book => (
-                <Card key={book._id} title={book.title} authors={book.authors} description={book.description} img={book.image}>
-                  <Link to={"/books/" + book._id}>
-                    <strong>
-                      View
-                    </strong>
-                  </Link>
-                  <DeleteBtn onClick={() => deleteBook(book._id)} />
-                </Card>
+                <div classNAme='col'>
+                <Card key={book._id} linkUrl={book.link} delete={deleteBook} id={book._id} saved={true} title={book.title} authors={book.authors} description={book.description} img={book.image}/>
+                </div>
               ))}
               </div>
             </div>
