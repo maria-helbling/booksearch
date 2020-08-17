@@ -9,11 +9,6 @@ import { Col, Row, Container } from "../components/Grid";
 
 function Books() {
   const [books, setBooks] = useState([])
-  const [formObject, setFormObject] = useState({
-    title: "",
-    authors: "",
-    description: ""
-  })
 
   useEffect(() => {
     loadBooks()
@@ -36,31 +31,6 @@ function Books() {
       .catch(err => console.log(err));
   }
 
-  function handleInputChange(event) {
-    const { name, value } = event.target;
-    setFormObject({ ...formObject, [name]: value })
-  };
-
-  function handleFormSubmit(event) {
-    event.preventDefault();
-    if (formObject.title && formObject.author) {
-      API.saveBook({
-        title: formObject.title,
-        author: formObject.author,
-        synopsis: formObject.synopsis
-      })
-        .then(res => {
-          setFormObject({
-            title: "",
-            author: "",
-            synopsis: ""
-          })
-          loadBooks()
-        })
-        .catch(err => console.log(err));
-    }
-  };
-
   return (
     <Container fluid>
       <Row>
@@ -74,9 +44,9 @@ function Books() {
               <div className="row">
 
               {books.map(book => (
-                <div classNAme='col'>
-                <Card key={book._id} linkUrl={book.link} delete={deleteBook} id={book._id} saved={true} title={book.title} authors={book.authors} description={book.description} img={book.image}/>
-                </div>
+                <Col size={'sm-12'} key={book._id}>
+                <Card key={book._id} link={book.link} delete={deleteBook} id={book._id} saved={true} title={book.title} authors={book.authors} description={book.description} img={book.image}/>
+                </Col>
               ))}
               </div>
             </div>

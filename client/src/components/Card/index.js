@@ -2,6 +2,7 @@ import React from 'react'
 import './style.css'
 import DeleteBtn from '../DeleteBtn'
 import Btn from '../Btn'
+import API from '../../utils/API'
 
 function Card (props) {
 const styles = {
@@ -9,6 +10,17 @@ const styles = {
         maxWidth: "540px"
     }
 }
+
+const handleSaveBook = () => {
+  API.saveBook({
+    title:props.title,
+    description:props.description,
+    authors:props.authors,
+    image:props.img,
+    link:props.link
+  })
+}
+
 
     return (
     <>
@@ -23,7 +35,8 @@ const styles = {
         <h5 className="card-title">{props.title}</h5>
         <p className="card-text"><small className="text-muted">{props.authors}</small></p>
         <p className="card-text">{props.description}</p>
-        <Btn onClick={console.log('clicked')} text={'View details'}></Btn>
+        <a className="btn" role="button" href={props.link} target="blank">View on Google</a>
+        {props.searched ? <Btn text={'Save me'} onClick={handleSaveBook}/> : null}
       </div>
     </div>
   </div>

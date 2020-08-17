@@ -1,6 +1,7 @@
 import axios from "axios";
 const prefix = "http://localhost:3001"
-
+const BaseUrl = "https://www.googleapis.com/books/v1/volumes?q="
+const APIkey = "&key=AIzaSyDjzJKwkkKEo6e431kLdnO9iD4460JDelg"
 export default {
   // Gets all books
   getBooks: function() {
@@ -16,6 +17,12 @@ export default {
   },
   // Saves a book to the database
   saveBook: function(bookData) {
-    return axios.post("/api/books", bookData, {withCredentials:true});
+    return axios.post(prefix + "/api/books", bookData, {withCredentials:true});
+  },
+
+  //external google
+  searchBooks:  function(searchTerm){
+    return axios.get(BaseUrl + searchTerm + APIkey)
   }
+
 };
