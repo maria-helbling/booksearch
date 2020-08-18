@@ -1,0 +1,12 @@
+.jumbotron {
+    background: url("https://images.pexels.com/photos/159711/books-bookstore-book-reading-159711.jpeg?cs=srgb&dl=pexels-pixabay-159711.jpg&fm=jpg");
+    background-size:cover;
+}
+
+h1 {
+    color:goldenrod
+}
+
+.jumbotron p {
+    color: goldenrod
+}

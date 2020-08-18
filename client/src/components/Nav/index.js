@@ -3,15 +3,15 @@ import {Link} from 'react-router-dom'
 
 function Nav() {
   return (
-    <nav className="navbar navbar-expand-lg navbar-dark bg-primary">
+    <nav className="navbar navbar-expand-lg navbar-dark bg-dark">
       <Link className="navbar-brand" to="/">
         Google Books
       </Link>
       <ul className="navbar-nav mr-auto">
-      <li className="nav-item active">
+      <li className="nav-item">
         <Link className="nav-link" to="/search">Search</Link>
       </li>
-      <li className="nav-item active">
+      <li className="nav-item">
         <Link className="nav-link" to="/saved">Saved</Link>
       </li>
       </ul>

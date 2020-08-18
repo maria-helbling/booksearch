@@ -10,7 +10,7 @@ function Books() {
   useEffect(() => {
     loadBooks()
   }, [])
-
+  //gets books from the db
   function loadBooks() {
     API.getBooks()
       .then(res => {
@@ -19,7 +19,7 @@ function Books() {
       })
       .catch(err => console.log(err));
   };
-
+  //makes delete request to database
   function deleteBook(e) {
     e.preventDefault();
     let id=e.target.getAttribute('data-id')
@@ -27,14 +27,16 @@ function Books() {
       .then(res => loadBooks())
       .catch(err => console.log(err));
   }
-
+  // renders the page
   return (
     <Container fluid>
       <Row>
         <Col size="sm-12">
           <Jumbotron>
+          <div id="heading">
             <h1>My saved books</h1>
             <p>View and delete saved books</p>
+            </div>
           </Jumbotron>
           {books.length ? (
             <div className="container">
