@@ -1,5 +1,5 @@
 import axios from "axios";
-const prefix = "http://localhost:3001"
+const prefix = "https://mhgooglebooks.herokuapp.com/"
 const BaseUrl = "https://www.googleapis.com/books/v1/volumes?q="
 const APIkey = "&key=AIzaSyDjzJKwkkKEo6e431kLdnO9iD4460JDelg"
 export default {
