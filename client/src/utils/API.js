@@ -5,7 +5,7 @@ const APIkey = "&key=AIzaSyDjzJKwkkKEo6e431kLdnO9iD4460JDelg"
 export default {
   // Gets all books
   getBooks: function() {
-    return axios.get(prefix + "/api/books", {withCredentials:true});
+    return axios.get("/api/books", {withCredentials:true});
   },
   // Gets the book with the given id
   getBook: function(id) {
@@ -17,7 +17,7 @@ export default {
   },
   // Saves a book to the database
   saveBook: function(bookData) {
-    return axios.post(prefix + "/api/books/", bookData, {withCredentials:true});
+    return axios.post("/api/books/", bookData, {withCredentials:true});
   },
 
   //external google
