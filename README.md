@@ -25,9 +25,12 @@ I want to be able to search for books based on key words
 SO THAT I can then save them in a reading list for future reference.
 
 A Screenshot of the search page is here:
+
 ![Search books page](images/screenshot1.PNG)
 
 A screenshot of the saved books list is here:
+
+
 ![Saved books list](images/screenshot2.PNG)
   
 ## License
@@ -53,5 +56,3 @@ There are no project specific tests provided.
 ## Questions
   
 Link to author's [gitHub profile](https://github.com/maria-helbling).
-  
-In case of further questions, e-mail: 
