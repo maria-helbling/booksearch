@@ -12,13 +12,15 @@ const styles = {
 }
 
 const handleSaveBook = () => {
-  API.saveBook({
+  let bookObj = {
     title:props.title,
     description:props.description,
-    authors:props.authors,
+    authors:props.authors.join(', '),
     image:props.img,
     link:props.link
-  })
+  }
+  console.log(bookObj)
+  API.saveBook(bookObj)
 }
 
 

@@ -1,9 +1,7 @@
 import React, { useState, useEffect } from "react";
-import DeleteBtn from "../components/DeleteBtn";
 import Jumbotron from "../components/Jumbotron";
 import Card from "../components/Card";
 import API from "../utils/API";
-import { Link } from "react-router-dom";
 import {Input, FormBtn} from '../components/Form'
 import { Col, Row, Container } from "../components/Grid";
 

@@ -20,7 +20,7 @@ function App() {
           <Search/>
         </Route>
         <Route exact path="/" >
-          <Books/>
+          <Search/>
         </Route>
         <Route exact path="*">
           <NoMatch/>

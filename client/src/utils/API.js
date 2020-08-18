@@ -17,7 +17,7 @@ export default {
   },
   // Saves a book to the database
   saveBook: function(bookData) {
-    return axios.post(prefix + "/api/books", bookData, {withCredentials:true});
+    return axios.post(prefix + "/api/books/", bookData, {withCredentials:true});
   },
 
   //external google
